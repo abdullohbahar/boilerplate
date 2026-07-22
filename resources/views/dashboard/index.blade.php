@@ -1,0 +1,28 @@
+@extends('layouts.app')
+
+@section('title', 'Dashboard — ' . config('app.name'))
+@section('page-title', 'Dashboard')
+@section('page-description', 'Welcome back, ' . auth()->user()->name . '.')
+
+@section('breadcrumb')
+	<li class="breadcrumb__item" aria-current="page">Dashboard</li>
+@endsection
+
+@section('content')
+<section class="page__section">
+	<div class="card">
+		<div class="empty-state">
+			<span class="empty-state__media">
+				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+					<g fill="none" stroke="currentColor" stroke-width="1.5">
+						<path d="M2 6.5c0-2.121 0-3.182.659-3.841S4.379 2 6.5 2s3.182 0 3.841.659S11 4.379 11 6.5s0 3.182-.659 3.841S8.621 11 6.5 11s-3.182 0-3.841-.659S2 8.621 2 6.5m11 11c0-2.121 0-3.182.659-3.841S15.379 13 17.5 13s3.182 0 3.841.659S22 15.379 22 17.5s0 3.182-.659 3.841S19.621 22 17.5 22s-3.182 0-3.841-.659S13 19.621 13 17.5" opacity=".5" />
+						<path d="M2 17.5c0-2.121 0-3.182.659-3.841S4.379 13 6.5 13s3.182 0 3.841.659S11 15.379 11 17.5s0 3.182-.659 3.841S8.621 22 6.5 22s-3.182 0-3.841-.659S2 19.621 2 17.5m11-11c0-2.121 0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11s-3.182 0-3.841-.659S13 8.621 13 6.5" />
+					</g>
+				</svg>
+			</span>
+			<h3 class="empty-state__title">Your dashboard</h3>
+			<p class="empty-state__text">Build your content here.</p>
+		</div>
+	</div>
+</section>
+@endsection
