@@ -92,7 +92,11 @@
 - [x] `.env.example` lengkap — semua ENV variable terdokumentasi dengan komentar, kelompokkan per fitur
 
 ### UI / UX
-- [ ] Pagination + search — komponen tabel reusable (search, sort, paginate)
+- [x] Pagination + search — komponen tabel reusable (search, sort, paginate):
+  - [x] `<x-search-bar>` — search input dengan clear button
+  - [x] `<x-pagination>` — conditional card__footer dengan paginator links
+  - [x] `<x-sortable-th>` — sort column header dengan direction toggle
+  - [x] Applied to users + activity tables; UserController + ActivityController support `?sort=&direction=`
 - [x] Active menu indicator — sidebar highlight item aktif berdasarkan route saat ini
 - [x] Dynamic breadcrumb — `<x-breadcrumb :items="[...]" />` anonymous component, updated all 14 existing views
 - [x] Email template — base Blade layout branded Meridian (`resources/views/emails/layout.blade.php`)

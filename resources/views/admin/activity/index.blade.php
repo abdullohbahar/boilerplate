@@ -10,15 +10,7 @@
 @section('content')
 <div class="card">
 	<div class="card__header">
-		<form method="GET" action="{{ route('admin.activity.index') }}" class="flex items-center gap-2 ms-auto">
-			<div class="input-group">
-				<input type="search" name="search" class="input" placeholder="Search description or user…"
-					value="{{ request('search') }}" />
-			</div>
-			@if (request('search'))
-				<a href="{{ route('admin.activity.index') }}" class="button button--ghost button--neutral">Clear</a>
-			@endif
-		</form>
+		<x-search-bar :action="route('admin.activity.index')" :value="request('search')" placeholder="Search description or user…" />
 	</div>
 
 	<div class="table-container">
@@ -28,7 +20,7 @@
 					<th>Description</th>
 					<th>Subject</th>
 					<th>User</th>
-					<th>When</th>
+					<x-sortable-th column="created_at" label="When" />
 				</tr>
 			</thead>
 			<tbody>
@@ -68,10 +60,6 @@
 		</table>
 	</div>
 
-	@if ($activities->hasPages())
-		<div class="card__footer">
-			{{ $activities->links() }}
-		</div>
-	@endif
+	<x-pagination :paginator="$activities" />
 </div>
 @endsection

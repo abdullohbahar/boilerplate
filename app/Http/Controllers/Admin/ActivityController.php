@@ -11,8 +11,10 @@ class ActivityController extends Controller
 {
     public function index(Request $request): View
     {
+        $direction = $request->get('direction') === 'asc' ? 'asc' : 'desc';
+
         $query = Activity::with('causer')
-            ->latest();
+            ->orderBy('created_at', $direction);
 
         if ($search = $request->string('search')->trim()->value()) {
             $query->where(function ($q) use ($search) {

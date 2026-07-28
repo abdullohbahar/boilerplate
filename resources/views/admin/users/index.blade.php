@@ -19,15 +19,7 @@
 @section('content')
 <div class="card">
 	<div class="card__header">
-		<form method="GET" action="{{ route('admin.users.index') }}" class="flex items-center gap-2 ms-auto">
-			<div class="input-group">
-				<input type="search" name="search" class="input" placeholder="Search name or email…"
-					value="{{ request('search') }}" />
-			</div>
-			@if (request('search'))
-				<a href="{{ route('admin.users.index') }}" class="button button--ghost button--neutral">Clear</a>
-			@endif
-		</form>
+		<x-search-bar :action="route('admin.users.index')" :value="request('search')" placeholder="Search name or email…" />
 	</div>
 
 	<div class="table-container">
@@ -35,10 +27,10 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Name</th>
-					<th>Email</th>
+					<x-sortable-th column="name" label="Name" />
+					<x-sortable-th column="email" label="Email" />
 					<th>Role</th>
-					<th>Joined</th>
+					<x-sortable-th column="created_at" label="Joined" />
 					<th></th>
 				</tr>
 			</thead>
@@ -85,10 +77,6 @@
 		</table>
 	</div>
 
-	@if ($users->hasPages())
-		<div class="card__footer">
-			{{ $users->links() }}
-		</div>
-	@endif
+	<x-pagination :paginator="$users" />
 </div>
 @endsection

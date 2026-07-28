@@ -17,10 +17,14 @@ class UserController extends Controller
 {
     public function index(Request $request): View
     {
+        $allowed = ['name', 'email', 'created_at'];
+        $sort = in_array($request->get('sort'), $allowed) ? $request->get('sort') : 'created_at';
+        $direction = $request->get('direction') === 'asc' ? 'asc' : 'desc';
+
         $users = User::query()
             ->with('roles')
             ->when($request->search, fn ($q, $s) => $q->where('name', 'like', "%{$s}%")->orWhere('email', 'like', "%{$s}%"))
-            ->latest()
+            ->orderBy($sort, $direction)
             ->paginate(15)
             ->withQueryString();
 
