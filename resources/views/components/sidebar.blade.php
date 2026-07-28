@@ -58,6 +58,18 @@
 							<span>Users</span>
 						</a>
 					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__button {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}" href="{{ route('admin.roles.index') }}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+								<g fill="none" stroke="currentColor" stroke-width="1.5">
+									<path d="M12 2C9.239 2 7 4.239 7 7s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5Z" opacity=".5" />
+									<path d="M17 14H7a5 5 0 0 0-5 5v1a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-1a5 5 0 0 0-5-5Z" />
+									<path d="M17 10.5 18.5 12l3-3" stroke-linecap="round" stroke-linejoin="round" />
+								</g>
+							</svg>
+							<span>Roles</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
