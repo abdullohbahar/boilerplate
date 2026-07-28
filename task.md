@@ -87,9 +87,9 @@
 - [x] Trait `HasSoftDelete` — konvensi soft delete (wraps Laravel SoftDeletes)
 
 ### Developer Experience
-- [ ] Development seeder — generate fake users dengan berbagai role menggunakan Faker (hanya jalan di `APP_ENV=local`)
-- [ ] Custom artisan stubs — override stub `make:controller`, `make:model`, `make:request` agar output-nya sesuai konvensi boilerplate
-- [ ] `.env.example` lengkap — semua ENV variable terdokumentasi dengan komentar, kelompokkan per fitur (App, DB, Mail, Auth, Captcha, Social Login, dll)
+- [x] Development seeder — generate fake users dengan berbagai role (hanya jalan di `APP_ENV=local`)
+- [x] Custom artisan stubs — override stub `make:controller`, `make:request` agar output-nya sesuai konvensi boilerplate
+- [x] `.env.example` lengkap — semua ENV variable terdokumentasi dengan komentar, kelompokkan per fitur
 
 ### UI / UX
 - [ ] Pagination + search — komponen tabel reusable (search, sort, paginate)
