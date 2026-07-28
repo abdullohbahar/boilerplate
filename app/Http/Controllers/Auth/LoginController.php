@@ -43,10 +43,23 @@ class LoginController extends Controller
             }
         }
 
-        if (Auth::attempt($credentials, $request->boolean('remember'))) {
+        if (Auth::validate($credentials)) {
+            $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+            if ($user->two_factor_enabled) {
+                session(['2fa_user_id' => $user->id, '2fa_remember' => $request->boolean('remember')]);
+
+                if (isset($key, $decayMinutes)) {
+                    RateLimiter::clear($key);
+                }
+
+                return redirect()->route('two-factor.challenge');
+            }
+
+            Auth::login($user, $request->boolean('remember'));
             $request->session()->regenerate();
 
-            if (isset($key)) {
+            if (isset($key, $decayMinutes)) {
                 RateLimiter::clear($key);
             }
 

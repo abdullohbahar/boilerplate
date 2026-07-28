@@ -18,11 +18,11 @@
   - [x] Support Google OAuth
   - [x] Support GitHub OAuth
   - [x] Handle akun baru (auto-register) vs akun lama (link ke existing user by email)
-- [ ] Two-Factor Authentication (2FA):
-  - [ ] TOTP via authenticator app (Google Authenticator, Authy)
-  - [ ] User bisa enable/disable 2FA dari halaman profil
-  - [ ] QR code setup + backup codes
-  - [ ] Middleware `require2fa` untuk route yang butuh 2FA
+- [x] Two-Factor Authentication (2FA):
+  - [x] TOTP via authenticator app (Google Authenticator, Authy)
+  - [x] User bisa enable/disable 2FA dari halaman profil
+  - [x] QR code setup + backup codes
+  - [x] Middleware `require2fa` untuk route yang butuh 2FA
 
 ### Admin
 - [x] Admin middleware — protect route dengan `role:admin`
