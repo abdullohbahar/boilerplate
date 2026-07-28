@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -32,5 +33,6 @@ Route::middleware('auth')->group(function () {
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('users', UserController::class)->except('show');
         Route::resource('roles', RoleController::class)->except('show');
+        Route::get('activity', [ActivityController::class, 'index'])->name('activity.index');
     });
 });

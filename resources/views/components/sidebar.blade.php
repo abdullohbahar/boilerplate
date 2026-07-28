@@ -70,6 +70,16 @@
 							<span>Roles</span>
 						</a>
 					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__button {{ request()->routeIs('admin.activity.*') ? 'active' : '' }}" href="{{ route('admin.activity.index') }}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+								<g fill="none" stroke="currentColor" stroke-width="1.5">
+									<path d="M3 12h4l3-9 4 18 3-9h4" stroke-linecap="round" stroke-linejoin="round" />
+								</g>
+							</svg>
+							<span>Activity Log</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</nav>

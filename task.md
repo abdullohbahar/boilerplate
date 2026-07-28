@@ -26,8 +26,8 @@
 
 ### Admin
 - [x] Admin middleware — protect route dengan `role:admin`
-- [ ] User management — list, create, edit, delete, assign role
-- [ ] Role management — CRUD roles
+- [x] User management — list, create, edit, delete, assign role
+- [x] Role management — CRUD roles
 - [ ] Menu management (RBAC) — hybrid config + DB approach:
   - [ ] `config/menus.php` — definisi menu tree (key, label, icon, route, parent, sort)
   - [ ] Tabel `menus` di DB + Artisan command `menu:sync`
