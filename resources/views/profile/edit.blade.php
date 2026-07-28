@@ -16,11 +16,12 @@
 	<div class="card">
 		<div class="card__header">
 			<span class="card__title">Profile information</span>
-			<p class="text-sm text-muted-foreground mt-1">Update your name and email address.</p>
+			<p class="text-sm text-muted-foreground mt-1">Update your name, email address, and avatar.</p>
 		</div>
 		<div class="card__body">
 			<form x-data="formAjax" @submit.prevent="submit"
-				method="POST" action="{{ route('profile.update') }}">
+				method="POST" action="{{ route('profile.update') }}"
+				enctype="multipart/form-data">
 				@csrf
 				@method('PUT')
 
@@ -36,6 +37,26 @@
 				</div>
 
 				<div class="flex flex-col gap-4">
+					<div class="field">
+						<label class="field__label">Avatar</label>
+						<div class="flex items-center gap-4">
+							<span class="avatar avatar--circle" data-stisla-avatar style="--avatar-size: 4rem;">
+								@if ($user->fileUrl('avatar'))
+									<img src="{{ $user->fileUrl('avatar') }}" alt="{{ $user->name }}" class="avatar__image" />
+								@else
+									<span class="avatar__fallback text-xl">{{ strtoupper(substr($user->name, 0, 2)) }}</span>
+								@endif
+							</span>
+							<div class="input-group">
+								<input type="file" id="avatar" name="avatar" class="input"
+									:class="{ 'is-invalid': errors.avatar }"
+									accept="image/*" />
+							</div>
+						</div>
+						<p class="field__hint">Max 2 MB. Will be resized to 400×400.</p>
+						<p class="field__error" x-show="errors.avatar" x-text="errors.avatar?.[0] ?? ''"></p>
+					</div>
+
 					<div class="field">
 						<label for="name" class="field__label">Name</label>
 						<div class="input-group">

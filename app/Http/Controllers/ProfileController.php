@@ -32,7 +32,14 @@ class ProfileController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email,'.$user->id],
+            'avatar' => ['nullable', 'image', 'max:2048'],
         ]);
+
+        if ($request->hasFile('avatar')) {
+            $validated['avatar'] = $request->file('avatar');
+        } else {
+            unset($validated['avatar']);
+        }
 
         $user->update($validated);
 

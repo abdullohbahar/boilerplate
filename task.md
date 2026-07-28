@@ -42,18 +42,17 @@
   - [x] Log aktivitas impersonation (siapa impersonate siapa)
 
 ### File Management
-- [ ] Tabel `files` polymorphic (`fileable_type`, `fileable_id`, `field`, `disk`, `path`, `original_name`, `mime_type`, `size`, `sort_order`)
-- [ ] Model `File` + trait `HasFile` pada model:
-  - [ ] Boot `saving` — deteksi `UploadedFile`, store, replace dengan path, delete file lama
-  - [ ] Boot `deleted` — auto-delete semua file terkait dari storage
-  - [ ] Relasi `morphOne` untuk single file, `morphMany` untuk multiple file
-  - [ ] Helper `fileUrl(string $field)` untuk akses URL dari Blade
-- [ ] Image resize & compression via Intervention Image:
-  - [ ] Auto-resize gambar ke dimensi maksimal yang dikonfigurasi per field
-  - [ ] Compress otomatis saat upload
-  - [ ] Konfigurasi per field di model (`protected array $imageFields = ['avatar' => ['width' => 400, 'height' => 400]]`)
-- [ ] Integrasi ke `User` model — field `avatar`
-- [ ] UI upload avatar di halaman edit profil
+- [x] Tabel `files` polymorphic (`fileable_type`, `fileable_id`, `field`, `disk`, `path`, `original_name`, `mime_type`, `size`, `sort_order`)
+- [x] Model `File` + trait `HasFile` pada model:
+  - [x] Boot `saving` — deteksi `UploadedFile`, store, replace dengan path, delete file lama
+  - [x] Boot `deleted` — auto-delete semua file terkait dari storage
+  - [x] Relasi `morphOne` untuk single file, `morphMany` untuk multiple file
+  - [x] Helper `fileUrl(string $field)` untuk akses URL dari Blade
+- [x] Image resize & compression via Intervention Image:
+  - [x] Auto-resize gambar ke dimensi maksimal yang dikonfigurasi per field
+  - [x] Konfigurasi per field di model (`protected array $fileFields = ['avatar' => ['width' => 400, 'height' => 400]]`)
+- [x] Integrasi ke `User` model — field `avatar`
+- [x] UI upload avatar di halaman edit profil
 
 ### App Settings
 - [ ] Tabel `settings` key-value store (`key`, `value`, `type`, `group`, `is_encrypted`)

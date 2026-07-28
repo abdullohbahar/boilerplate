@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Concerns\HasFile;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
@@ -18,7 +19,12 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasActivity, HasFactory, HasRoles, Notifiable;
+    use HasActivity, HasFactory, HasFile, HasRoles, Notifiable;
+
+    /** @var array<string, array<string, mixed>> */
+    protected array $fileFields = [
+        'avatar' => ['disk' => 'public', 'dir' => 'avatars', 'width' => 400, 'height' => 400],
+    ];
 
     public function getActivitylogOptions(): LogOptions
     {

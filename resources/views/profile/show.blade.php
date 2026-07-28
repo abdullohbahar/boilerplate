@@ -33,7 +33,11 @@
 		<div class="card">
 			<div class="card__body flex flex-col items-center text-center gap-3">
 				<span class="avatar avatar--circle" data-stisla-avatar style="--avatar-size: 5rem;">
-					<span class="avatar__fallback text-2xl">{{ strtoupper(substr($user->name, 0, 2)) }}</span>
+					@if ($user->fileUrl('avatar'))
+						<img src="{{ $user->fileUrl('avatar') }}" alt="{{ $user->name }}" class="avatar__image" />
+					@else
+						<span class="avatar__fallback text-2xl">{{ strtoupper(substr($user->name, 0, 2)) }}</span>
+					@endif
 				</span>
 				<div>
 					<h2 class="text-lg font-semibold">{{ $user->name }}</h2>
