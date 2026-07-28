@@ -15,12 +15,23 @@
 				<span class="sidebar__group-title">Menu</span>
 				<ul class="sidebar__list">
 					<li class="sidebar__item">
-						<a class="sidebar__button {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">
+						<a class="sidebar__button {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
 							<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
 								<path fill="currentColor" d="M2 6.5c0-2.121 0-3.182.659-3.841S4.379 2 6.5 2s3.182 0 3.841.659S11 4.379 11 6.5s0 3.182-.659 3.841S8.621 11 6.5 11s-3.182 0-3.841-.659S2 8.621 2 6.5m11 11c0-2.121 0-3.182.659-3.841S15.379 13 17.5 13s3.182 0 3.841.659S22 15.379 22 17.5s0 3.182-.659 3.841S19.621 22 17.5 22s-3.182 0-3.841-.659S13 19.621 13 17.5" opacity=".5" />
 								<path fill="currentColor" d="M2 17.5c0-2.121 0-3.182.659-3.841S4.379 13 6.5 13s3.182 0 3.841.659S11 15.379 11 17.5s0 3.182-.659 3.841S8.621 22 6.5 22s-3.182 0-3.841-.659S2 19.621 2 17.5m11-11c0-2.121 0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11s-3.182 0-3.841-.659S13 8.621 13 6.5" />
 							</svg>
 							<span>Dashboard</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__button {{ request()->routeIs('profile', 'profile.edit') ? 'active' : '' }}" href="{{ route('profile') }}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+								<g fill="none" stroke="currentColor" stroke-width="1.5">
+									<circle cx="12" cy="6" r="4" />
+									<path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" opacity=".5" />
+								</g>
+							</svg>
+							<span>Profile</span>
 						</a>
 					</li>
 				</ul>
