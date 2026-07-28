@@ -101,7 +101,7 @@
 - [ ] Dynamic breadcrumb — helper atau component untuk generate breadcrumb dari array, tidak perlu hardcode per halaman
 - [ ] Email template — base Blade layout branded Meridian untuk semua transactional email (password reset, welcome, dll)
 - [ ] Maintenance mode — halaman custom dengan desain Meridian, toggle dari App Settings, whitelist IP via ENV (`MAINTENANCE_BYPASS_IPS`)
-- [ ] Custom error pages — 404, 403, 500, 419 dengan desain Meridian
+- [x] Custom error pages — 404, 403, 500, 419 dengan desain Meridian
 - [ ] Session management di halaman profil:
   - [ ] Tampilkan semua sesi aktif (device, IP, last active, browser)
   - [ ] Tombol revoke sesi tertentu
