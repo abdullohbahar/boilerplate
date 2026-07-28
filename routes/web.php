@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\TwoFactorChallengeController;
 use App\Http\Controllers\Auth\TwoFactorController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/locale/{locale}', LocaleController::class)->name('locale.switch');
@@ -44,6 +45,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/two-factor', [TwoFactorController::class, 'show'])->name('profile.2fa.show');
     Route::post('/profile/two-factor/enable', [TwoFactorController::class, 'enable'])->name('profile.2fa.enable');
     Route::delete('/profile/two-factor', [TwoFactorController::class, 'disable'])->name('profile.2fa.disable');
+    Route::get('/profile/sessions', [SessionController::class, 'index'])->name('profile.sessions');
+    Route::delete('/profile/sessions/{session}', [SessionController::class, 'destroy'])->name('profile.sessions.destroy');
+    Route::delete('/profile/sessions', [SessionController::class, 'destroyOthers'])->name('profile.sessions.destroy-others');
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('users', UserController::class)->except('show');

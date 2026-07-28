@@ -95,13 +95,13 @@
 - [ ] Pagination + search — komponen tabel reusable (search, sort, paginate)
 - [x] Active menu indicator — sidebar highlight item aktif berdasarkan route saat ini
 - [ ] Dynamic breadcrumb — helper atau component untuk generate breadcrumb dari array, tidak perlu hardcode per halaman
-- [ ] Email template — base Blade layout branded Meridian untuk semua transactional email (password reset, welcome, dll)
-- [ ] Maintenance mode — halaman custom dengan desain Meridian, toggle dari App Settings, whitelist IP via ENV (`MAINTENANCE_BYPASS_IPS`)
+- [x] Email template — base Blade layout branded Meridian (`resources/views/emails/layout.blade.php`)
+- [x] Maintenance mode — halaman custom 503 dengan desain Meridian (via `php artisan down/up`)
 - [x] Custom error pages — 404, 403, 500, 419 dengan desain Meridian
-- [ ] Session management di halaman profil:
-  - [ ] Tampilkan semua sesi aktif (device, IP, last active, browser)
-  - [ ] Tombol revoke sesi tertentu
-  - [ ] Tombol "Logout semua perangkat lain"
+- [x] Session management di halaman profil:
+  - [x] Tampilkan semua sesi aktif (device, IP, last active, browser)
+  - [x] Tombol revoke sesi tertentu
+  - [x] Tombol "Logout semua perangkat lain"
 
 ### Nice to Have
 - [ ] Notifikasi in-app — bell icon di navbar, Laravel Notification
