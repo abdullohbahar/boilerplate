@@ -13,11 +13,11 @@
   - [x] Support Google reCAPTCHA v2
   - [x] Support Cloudflare Turnstile
   - [x] Verifikasi server-side sebelum proses login/register
-- [ ] Social login via Laravel Socialite:
-  - [ ] Toggle per provider via ENV (`GOOGLE_LOGIN_ENABLED=true/false`, `GITHUB_LOGIN_ENABLED=true/false`)
-  - [ ] Support Google OAuth
-  - [ ] Support GitHub OAuth
-  - [ ] Handle akun baru (auto-register) vs akun lama (link ke existing user by email)
+- [x] Social login via Laravel Socialite:
+  - [x] Toggle per provider via ENV (`GOOGLE_LOGIN_ENABLED=true/false`, `GITHUB_LOGIN_ENABLED=true/false`)
+  - [x] Support Google OAuth
+  - [x] Support GitHub OAuth
+  - [x] Handle akun baru (auto-register) vs akun lama (link ke existing user by email)
 - [ ] Two-Factor Authentication (2FA):
   - [ ] TOTP via authenticator app (Google Authenticator, Authy)
   - [ ] User bisa enable/disable 2FA dari halaman profil
