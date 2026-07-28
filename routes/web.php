@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ActivityController;
+use App\Http\Controllers\Admin\ImpersonationController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -34,5 +35,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('users', UserController::class)->except('show');
         Route::resource('roles', RoleController::class)->except('show');
         Route::get('activity', [ActivityController::class, 'index'])->name('activity.index');
+        Route::post('impersonate/stop', [ImpersonationController::class, 'stop'])->name('impersonate.stop');
+        Route::post('impersonate/{user}', [ImpersonationController::class, 'start'])->name('impersonate.start');
     });
 });

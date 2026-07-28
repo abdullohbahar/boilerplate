@@ -22,6 +22,17 @@
 	<x-sidebar />
 
 	<main class="app-shell__main">
+		@if (session('impersonator_id'))
+			<div class="alert alert--warning flex items-center justify-between gap-4 rounded-none border-x-0 border-t-0" role="alert" style="position:sticky;top:0;z-index:100;">
+				<span>
+					<strong>Impersonation mode</strong> — you are currently viewing the app as <strong>{{ auth()->user()->name }}</strong>.
+				</span>
+				<form method="POST" action="{{ route('admin.impersonate.stop') }}">
+					@csrf
+					<button type="submit" class="button button--warning button--sm">Return to my account</button>
+				</form>
+			</div>
+		@endif
 		<header class="navbar">
 			<button type="button"
 				class="button button--ghost button--neutral button--icon-only button--flush-start"

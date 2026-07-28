@@ -35,11 +35,11 @@
   - [ ] Middleware cek akses route berdasarkan role
   - [ ] Sidebar render dinamis dari DB berdasarkan role user
 - [ ] Activity log viewer — halaman admin lihat semua log aktivitas
-- [ ] Impersonation — admin bisa login sebagai user lain:
-  - [ ] Tombol "Login as" di halaman user management
-  - [ ] Banner di atas app saat sedang impersonate
-  - [ ] Tombol "Kembali ke akun saya" untuk stop impersonation
-  - [ ] Log aktivitas impersonation (siapa impersonate siapa)
+- [x] Impersonation — admin bisa login sebagai user lain:
+  - [x] Tombol "Login as" di halaman user management
+  - [x] Banner di atas app saat sedang impersonate
+  - [x] Tombol "Kembali ke akun saya" untuk stop impersonation
+  - [x] Log aktivitas impersonation (siapa impersonate siapa)
 
 ### File Management
 - [ ] Tabel `files` polymorphic (`fileable_type`, `fileable_id`, `field`, `disk`, `path`, `original_name`, `mime_type`, `size`, `sort_order`)

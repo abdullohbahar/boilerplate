@@ -59,6 +59,13 @@
 						<td class="text-muted-foreground text-sm">{{ $user->created_at->format('d M Y') }}</td>
 						<td>
 							<div class="flex items-center gap-1 justify-end">
+								@if (! $user->hasRole('admin') && $user->id !== auth()->id() && ! session('impersonator_id'))
+									<form method="POST" action="{{ route('admin.impersonate.start', $user) }}"
+										onsubmit="return confirm('Login as {{ addslashes($user->name) }}?')">
+										@csrf
+										<button type="submit" class="button button--ghost button--neutral button--sm">Login as</button>
+									</form>
+								@endif
 								<a href="{{ route('admin.users.edit', $user) }}"
 									class="button button--ghost button--neutral button--sm">Edit</a>
 								<form method="POST" action="{{ route('admin.users.destroy', $user) }}"
