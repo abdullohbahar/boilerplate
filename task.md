@@ -75,19 +75,16 @@
 - [ ] Wrap semua hardcode string di view dengan `__()`  — ongoing as views are added
 
 ### Helpers & Utilities
-- [ ] File `app/helpers.php` + autoload via `composer.json`:
-  - [ ] `format_date($date, $format)` — format tanggal konsisten
-  - [ ] `format_currency($amount, $currency)` — format angka ke mata uang
-  - [ ] `format_bytes($bytes)` — convert bytes ke KB/MB/GB
-  - [ ] `setting($key, $default)` — ambil app setting (wrapper)
-- [ ] Trait `HasSlug`:
-  - [ ] Auto-generate slug dari field yang didefinisikan di model (`protected string $slugFrom = 'name'`)
-  - [ ] Hanya aktif jika model memiliki kolom `slug` (cek via `Schema::hasColumn`)
-  - [ ] Handle duplicate slug dengan suffix angka (`judul`, `judul-1`, `judul-2`)
-- [ ] Trait `HasSoftDelete` — konvensi soft delete:
-  - [ ] Gunakan bawaan Laravel `SoftDeletes`, trait ini hanya tambah scope & helper
-  - [ ] Scope `onlyTrashed()`, `withTrashed()` sudah ada di Laravel
-  - [ ] Komponen UI badge "Deleted" + tombol Restore & Force Delete di halaman admin
+- [x] File `app/helpers.php` + autoload via `composer.json`:
+  - [x] `format_date($date, $format)` — format tanggal konsisten
+  - [x] `format_currency($amount, $currency)` — format angka ke mata uang
+  - [x] `format_bytes($bytes)` — convert bytes ke KB/MB/GB
+  - [x] `setting($key, $default)` — ambil app setting (wrapper)
+- [x] Trait `HasSlug`:
+  - [x] Auto-generate slug dari field yang didefinisikan di model (`protected string $slugFrom = 'name'`)
+  - [x] Hanya aktif jika model memiliki kolom `slug` (cek via `Schema::hasColumn`)
+  - [x] Handle duplicate slug dengan suffix angka (`judul`, `judul-1`, `judul-2`)
+- [x] Trait `HasSoftDelete` — konvensi soft delete (wraps Laravel SoftDeletes)
 
 ### Developer Experience
 - [ ] Development seeder — generate fake users dengan berbagai role menggunakan Faker (hanya jalan di `APP_ENV=local`)
