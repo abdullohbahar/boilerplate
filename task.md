@@ -68,11 +68,11 @@
   - [ ] Fallback ke `.env` kalau setting DB kosong
 
 ### Multi-language (i18n)
-- [ ] Struktur translation files `lang/en/` dan `lang/id/`
-- [ ] `APP_LOCALE` di `.env` (default: `id`)
-- [ ] Language switcher di navbar (toggle EN/ID)
-- [ ] Semua string UI di boilerplate ditranslasi (auth, profile, validasi, dll)
-- [ ] Helper `__()` sudah cukup, pastikan semua view pakai translation key bukan hardcode string
+- [x] Struktur translation files `lang/en/` dan `lang/id/`
+- [x] `APP_LOCALE` di `.env`
+- [x] Language switcher di navbar (toggle EN/ID)
+- [x] Translation files: auth, passwords, pagination, app strings (EN + ID)
+- [ ] Wrap semua hardcode string di view dengan `__()`  — ongoing as views are added
 
 ### Helpers & Utilities
 - [ ] File `app/helpers.php` + autoload via `composer.json`:

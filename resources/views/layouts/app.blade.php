@@ -44,6 +44,29 @@
 			</button>
 
 			<div class="ms-auto flex gap-1">
+				<div class="menu">
+					<button type="button"
+						class="button button--ghost button--neutral button--sm"
+						data-stisla-menu-trigger="langSwitch"
+						aria-haspopup="menu"
+						aria-expanded="false"
+						aria-controls="langSwitch">
+						{{ strtoupper(app()->getLocale()) }}
+					</button>
+					<div class="menu__popup" id="langSwitch" data-stisla-menu role="menu" data-state="closed">
+						@foreach (config('app.supported_locales', ['en', 'id']) as $locale)
+							<form method="POST" action="{{ route('locale.switch', $locale) }}">
+								@csrf
+								<button type="submit"
+									class="menu__item w-full text-start {{ app()->getLocale() === $locale ? 'font-semibold' : '' }}"
+									role="menuitem">
+									{{ strtoupper($locale) }}
+								</button>
+							</form>
+						@endforeach
+					</div>
+				</div>
+
 				<button type="button"
 					class="button button--ghost button--neutral button--icon-only"
 					data-theme-toggle

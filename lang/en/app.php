@@ -1,0 +1,24 @@
+<?php
+
+return [
+    'dashboard' => 'Dashboard',
+    'profile' => 'Profile',
+    'edit_profile' => 'Edit Profile',
+    'sign_in' => 'Sign in',
+    'sign_out' => 'Log out',
+    'register' => 'Create account',
+    'save_changes' => 'Save changes',
+    'cancel' => 'Cancel',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'create' => 'Create',
+    'search' => 'Search',
+    'no_results' => 'No results found.',
+    'welcome_back' => 'Welcome back',
+    'two_factor' => 'Two-Factor Authentication',
+    'activity_log' => 'Activity Log',
+    'users' => 'Users',
+    'roles' => 'Roles',
+    'settings' => 'Settings',
+    'language' => 'Language',
+];

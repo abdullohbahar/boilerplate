@@ -11,8 +11,11 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\Auth\TwoFactorChallengeController;
 use App\Http\Controllers\Auth\TwoFactorController;
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+Route::post('/locale/{locale}', LocaleController::class)->name('locale.switch');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'show'])->name('login');
