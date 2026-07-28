@@ -7,12 +7,12 @@
 ### Auth
 - [x] Password reset — halaman input password baru dari link email (`GET/POST /reset-password/{token}`)
 - [x] Login rate limiting — throttle max attempt via ENV (`LOGIN_THROTTLE=true/false`, `LOGIN_MAX_ATTEMPTS=5`, `LOGIN_DECAY_MINUTES=5`)
-- [ ] Captcha pada form login & register:
-  - [ ] Toggle via ENV (`CAPTCHA_ENABLED=true/false`)
-  - [ ] Provider via ENV (`CAPTCHA_PROVIDER=google|cloudflare`)
-  - [ ] Support Google reCAPTCHA v2
-  - [ ] Support Cloudflare Turnstile
-  - [ ] Verifikasi server-side sebelum proses login/register
+- [x] Captcha pada form login & register:
+  - [x] Toggle via ENV (`CAPTCHA_ENABLED=true/false`)
+  - [x] Provider via ENV (`CAPTCHA_PROVIDER=google|cloudflare`)
+  - [x] Support Google reCAPTCHA v2
+  - [x] Support Cloudflare Turnstile
+  - [x] Verifikasi server-side sebelum proses login/register
 - [ ] Social login via Laravel Socialite:
   - [ ] Toggle per provider via ENV (`GOOGLE_LOGIN_ENABLED=true/false`, `GITHUB_LOGIN_ENABLED=true/false`)
   - [ ] Support Google OAuth

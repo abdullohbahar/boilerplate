@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Support\Captcha;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,10 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
+
+        if (! Captcha::verify($request)) {
+            return back()->withErrors(['captcha' => 'Please complete the captcha.'])->onlyInput('email');
+        }
 
         if (config('auth.login_throttle')) {
             $key = 'login:'.Str::lower($request->input('email')).'|'.$request->ip();
@@ -48,7 +53,7 @@ class LoginController extends Controller
             return redirect()->intended('/');
         }
 
-        if (isset($key)) {
+        if (isset($key, $decayMinutes)) {
             RateLimiter::hit($key, $decayMinutes * 60);
         }
 

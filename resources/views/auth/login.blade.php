@@ -62,6 +62,8 @@
 		<label class="field__label" for="remember">Keep me signed in</label>
 	</div>
 
+	<x-captcha />
+
 	<button type="submit" class="button button--primary button--block button--lg">
 		Sign in
 		<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
