@@ -39,6 +39,31 @@
 		</nav>
 	</div>
 
+	@role('admin')
+	<div class="sidebar__content">
+		<nav class="sidebar__menu">
+			<div class="sidebar__group">
+				<span class="sidebar__group-title">Admin</span>
+				<ul class="sidebar__list">
+					<li class="sidebar__item">
+						<a class="sidebar__button {{ request()->routeIs('admin.users.*') ? 'active' : '' }}" href="{{ route('admin.users.index') }}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+								<g fill="none" stroke="currentColor" stroke-width="1.5">
+									<circle cx="9" cy="6" r="4" />
+									<path d="M15 9a3 3 0 1 0 0-6" opacity=".5" />
+									<ellipse cx="9" cy="17" rx="7" ry="4" />
+									<path d="M22 17c0 2.21-3.134 4-7 4" opacity=".5" />
+								</g>
+							</svg>
+							<span>Users</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	@endrole
+
 	<footer class="sidebar__footer">
 		<ul class="sidebar__list">
 			<li class="sidebar__item">

@@ -25,7 +25,7 @@
   - [ ] Middleware `require2fa` untuk route yang butuh 2FA
 
 ### Admin
-- [ ] Admin middleware — protect route dengan `role:admin`
+- [x] Admin middleware — protect route dengan `role:admin`
 - [ ] User management — list, create, edit, delete, assign role
 - [ ] Role management — CRUD roles
 - [ ] Menu management (RBAC) — hybrid config + DB approach:
