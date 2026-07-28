@@ -94,7 +94,7 @@
 ### UI / UX
 - [ ] Pagination + search — komponen tabel reusable (search, sort, paginate)
 - [x] Active menu indicator — sidebar highlight item aktif berdasarkan route saat ini
-- [ ] Dynamic breadcrumb — helper atau component untuk generate breadcrumb dari array, tidak perlu hardcode per halaman
+- [x] Dynamic breadcrumb — `<x-breadcrumb :items="[...]" />` anonymous component, updated all 14 existing views
 - [x] Email template — base Blade layout branded Meridian (`resources/views/emails/layout.blade.php`)
 - [x] Maintenance mode — halaman custom 503 dengan desain Meridian (via `php artisan down/up`)
 - [x] Custom error pages — 404, 403, 500, 419 dengan desain Meridian

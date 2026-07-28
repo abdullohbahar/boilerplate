@@ -5,7 +5,7 @@
 @section('page-description', 'Welcome back, ' . auth()->user()->name . '.')
 
 @section('breadcrumb')
-	<li class="breadcrumb__item" aria-current="page">Dashboard</li>
+	<x-breadcrumb :items="[['label' => 'Dashboard']]" />
 @endsection
 
 @section('content')

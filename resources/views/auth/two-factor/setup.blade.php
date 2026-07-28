@@ -4,9 +4,7 @@
 @section('page-title', 'Two-Factor Authentication')
 
 @section('breadcrumb')
-	<li class="breadcrumb__item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-	<li class="breadcrumb__item"><a href="{{ route('profile') }}">Profile</a></li>
-	<li class="breadcrumb__item" aria-current="page">Two-Factor Authentication</li>
+	<x-breadcrumb :items="[['label' => 'Dashboard', 'route' => 'dashboard'], ['label' => 'Profile', 'route' => 'profile'], ['label' => 'Two-Factor Authentication']]" />
 @endsection
 
 @section('content')

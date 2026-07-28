@@ -4,8 +4,7 @@
 @section('page-title', 'Activity Log')
 
 @section('breadcrumb')
-	<li class="breadcrumb__item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-	<li class="breadcrumb__item" aria-current="page">Activity Log</li>
+	<x-breadcrumb :items="[['label' => 'Dashboard', 'route' => 'dashboard'], ['label' => 'Activity Log']]" />
 @endsection
 
 @section('content')

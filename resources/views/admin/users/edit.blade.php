@@ -4,9 +4,7 @@
 @section('page-title', 'Edit User')
 
 @section('breadcrumb')
-	<li class="breadcrumb__item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-	<li class="breadcrumb__item"><a href="{{ route('admin.users.index') }}">Users</a></li>
-	<li class="breadcrumb__item" aria-current="page">{{ $user->name }}</li>
+	<x-breadcrumb :items="[['label' => 'Dashboard', 'route' => 'dashboard'], ['label' => 'Users', 'route' => 'admin.users.index'], ['label' => $user->name]]" />
 @endsection
 
 @section('content')

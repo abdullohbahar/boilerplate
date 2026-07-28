@@ -4,8 +4,7 @@
 @section('page-title', 'Users')
 
 @section('breadcrumb')
-	<li class="breadcrumb__item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-	<li class="breadcrumb__item" aria-current="page">Users</li>
+	<x-breadcrumb :items="[['label' => 'Dashboard', 'route' => 'dashboard'], ['label' => 'Users']]" />
 @endsection
 
 @section('page-action')

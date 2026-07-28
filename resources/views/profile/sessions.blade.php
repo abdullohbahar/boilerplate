@@ -4,9 +4,7 @@
 @section('page-title', 'Active Sessions')
 
 @section('breadcrumb')
-	<li class="breadcrumb__item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-	<li class="breadcrumb__item"><a href="{{ route('profile') }}">Profile</a></li>
-	<li class="breadcrumb__item" aria-current="page">Sessions</li>
+	<x-breadcrumb :items="[['label' => 'Dashboard', 'route' => 'dashboard'], ['label' => 'Profile', 'route' => 'profile'], ['label' => 'Sessions']]" />
 @endsection
 
 @section('page-action')

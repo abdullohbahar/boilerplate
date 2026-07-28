@@ -4,9 +4,7 @@
 @section('page-title', 'Add Role')
 
 @section('breadcrumb')
-	<li class="breadcrumb__item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-	<li class="breadcrumb__item"><a href="{{ route('admin.roles.index') }}">Roles</a></li>
-	<li class="breadcrumb__item" aria-current="page">Add</li>
+	<x-breadcrumb :items="[['label' => 'Dashboard', 'route' => 'dashboard'], ['label' => 'Roles', 'route' => 'admin.roles.index'], ['label' => 'Add']]" />
 @endsection
 
 @section('content')
