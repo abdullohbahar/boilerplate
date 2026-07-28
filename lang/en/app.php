@@ -21,4 +21,5 @@ return [
     'roles' => 'Roles',
     'settings' => 'Settings',
     'language' => 'Language',
+    'menus' => 'Menu Access',
 ];

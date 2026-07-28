@@ -28,13 +28,13 @@
 - [x] Admin middleware — protect route dengan `role:admin`
 - [x] User management — list, create, edit, delete, assign role
 - [x] Role management — CRUD roles
-- [ ] Menu management (RBAC) — hybrid config + DB approach:
-  - [ ] `config/menus.php` — definisi menu tree (key, label, icon, route, parent, sort)
-  - [ ] Tabel `menus` di DB + Artisan command `menu:sync`
-  - [ ] UI assign menu per role (checklist)
-  - [ ] Middleware cek akses route berdasarkan role
-  - [ ] Sidebar render dinamis dari DB berdasarkan role user
-- [ ] Activity log viewer — halaman admin lihat semua log aktivitas
+- [x] Menu management (RBAC) — hybrid config + DB approach:
+  - [x] `config/menus.php` — definisi menu tree (key, label, icon, route, parent, sort)
+  - [x] Tabel `menus` di DB + Artisan command `menu:sync`
+  - [x] UI assign menu per role (checklist) — `admin/menus`
+  - [x] Middleware `menu` cek akses route berdasarkan role
+  - [x] Sidebar render dinamis dari DB berdasarkan role user (View Composer)
+- [x] Activity log viewer — halaman admin lihat semua log aktivitas
 - [x] Impersonation — admin bisa login sebagai user lain:
   - [x] Tombol "Login as" di halaman user management
   - [x] Banner di atas app saat sedang impersonate

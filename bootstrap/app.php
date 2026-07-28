@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CheckMenuAccess;
 use App\Http\Middleware\EnsureIsAdmin;
 use App\Http\Middleware\RequireTwoFactor;
 use App\Http\Middleware\SetLocale;
@@ -18,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [SetLocale::class]);
         $middleware->alias([
             'admin' => EnsureIsAdmin::class,
+            'menu' => CheckMenuAccess::class,
             'require2fa' => RequireTwoFactor::class,
         ]);
     })

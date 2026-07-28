@@ -21,4 +21,5 @@ return [
     'roles' => 'Peran',
     'settings' => 'Pengaturan',
     'language' => 'Bahasa',
+    'menus' => 'Akses Menu',
 ];
