@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class LoginController extends Controller
@@ -22,10 +24,32 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
+        if (config('auth.login_throttle')) {
+            $key = 'login:'.Str::lower($request->input('email')).'|'.$request->ip();
+            $maxAttempts = (int) config('auth.login_max_attempts', 5);
+            $decayMinutes = (int) config('auth.login_decay_minutes', 5);
+
+            if (RateLimiter::tooManyAttempts($key, $maxAttempts)) {
+                $seconds = RateLimiter::availableIn($key);
+
+                return back()->withErrors([
+                    'email' => "Too many login attempts. Please try again in {$seconds} seconds.",
+                ])->onlyInput('email');
+            }
+        }
+
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
 
+            if (isset($key)) {
+                RateLimiter::clear($key);
+            }
+
             return redirect()->intended('/');
+        }
+
+        if (isset($key)) {
+            RateLimiter::hit($key, $decayMinutes * 60);
         }
 
         return back()->withErrors([
