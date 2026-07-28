@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\ImpersonationController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
@@ -50,5 +51,9 @@ Route::middleware('auth')->group(function () {
         Route::get('activity', [ActivityController::class, 'index'])->name('activity.index');
         Route::post('impersonate/stop', [ImpersonationController::class, 'stop'])->name('impersonate.stop');
         Route::post('impersonate/{user}', [ImpersonationController::class, 'start'])->name('impersonate.start');
+        Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
+        Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
+        Route::post('settings', [SettingController::class, 'store'])->name('settings.store');
+        Route::delete('settings/{setting}', [SettingController::class, 'destroy'])->name('settings.destroy');
     });
 });

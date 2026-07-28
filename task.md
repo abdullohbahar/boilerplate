@@ -55,17 +55,17 @@
 - [x] UI upload avatar di halaman edit profil
 
 ### App Settings
-- [ ] Tabel `settings` key-value store (`key`, `value`, `type`, `group`, `is_encrypted`)
-- [ ] Model `Setting` + helper global `setting('key', $default)`
-- [ ] Cache settings agar tidak query DB setiap request
-- [ ] Field sensitif di-encrypt otomatis (`is_encrypted = true`) — pakai `encrypt()`/`decrypt()` Laravel
-- [ ] UI halaman admin untuk edit settings per group
-- [ ] Seeder settings default (nama app, deskripsi, dll)
-- [ ] SMTP settings di DB (group `mail`):
-  - [ ] Field: `mail.host`, `mail.port`, `mail.username`, `mail.password`, `mail.encryption`, `mail.from_address`, `mail.from_name`
-  - [ ] `mail.password` di-encrypt (`is_encrypted = true`)
-  - [ ] Load & override `config('mail.mailers.smtp')` di `AppServiceProvider::boot()`
-  - [ ] Fallback ke `.env` kalau setting DB kosong
+- [x] Tabel `settings` key-value store (`key`, `value`, `type`, `group`, `is_encrypted`)
+- [x] Model `Setting` + helper global `setting('key', $default)`
+- [x] Cache settings agar tidak query DB setiap request
+- [x] Field sensitif di-encrypt otomatis (`is_encrypted = true`) — pakai `encrypt()`/`decrypt()` Laravel
+- [x] UI halaman admin untuk edit settings per group
+- [x] Seeder settings default (nama app, deskripsi, dll)
+- [x] SMTP settings di DB (group `mail`):
+  - [x] Field: `mail.host`, `mail.port`, `mail.username`, `mail.password`, `mail.encryption`, `mail.from_address`, `mail.from_name`
+  - [x] `mail.password` di-encrypt (`is_encrypted = true`)
+  - [x] Load & override `config('mail.mailers.smtp')` di `AppServiceProvider::boot()`
+  - [x] Fallback ke `.env` kalau setting DB kosong
 
 ### Multi-language (i18n)
 - [x] Struktur translation files `lang/en/` dan `lang/id/`
