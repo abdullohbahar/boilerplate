@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Setting;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Carbon;
 
 if (! function_exists('setting')) {
@@ -25,6 +26,30 @@ if (! function_exists('format_currency')) {
     function format_currency(int|float $amount, string $currency = 'IDR'): string
     {
         return number_format($amount, 0, ',', '.').' '.$currency;
+    }
+}
+
+if (! function_exists('success')) {
+    function success(string $message, mixed $data = null, int $status = 200): JsonResponse
+    {
+        $payload = ['message' => $message];
+        if ($data !== null) {
+            $payload['data'] = $data;
+        }
+
+        return response()->json($payload, $status);
+    }
+}
+
+if (! function_exists('failed')) {
+    function failed(string $message, mixed $errors = null, int $status = 422): JsonResponse
+    {
+        $payload = ['message' => $message];
+        if ($errors !== null) {
+            $payload['errors'] = $errors;
+        }
+
+        return response()->json($payload, $status);
     }
 }
 
