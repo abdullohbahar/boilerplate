@@ -109,6 +109,20 @@ $hasAdminMenus = $sidebarMenus->contains(fn ($m) => str_starts_with($m->key, 'ad
 								</a>
 							</li>
 						@endif
+						@if ($canSee('admin.logs'))
+							<li class="sidebar__item">
+								<a class="sidebar__button {{ request()->routeIs('admin.logs.*') ? 'active' : '' }}" href="{{ route('admin.logs.index') }}">
+									<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+										<g fill="none" stroke="currentColor" stroke-width="1.5">
+											<path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3" stroke-linecap="round" />
+											<path d="M16 10h5l-5 5h5" stroke-linecap="round" stroke-linejoin="round" opacity=".5" />
+											<path d="M7 9h7M7 13h4" stroke-linecap="round" opacity=".5" />
+										</g>
+									</svg>
+									<span>Log Viewer</span>
+								</a>
+							</li>
+						@endif
 						@if ($canSee('admin.settings'))
 							<li class="sidebar__item">
 								<a class="sidebar__button {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}" href="{{ route('admin.settings.index') }}">

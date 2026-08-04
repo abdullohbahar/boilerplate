@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\ImpersonationController;
+use App\Http\Controllers\Admin\LogController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SettingController;
@@ -58,6 +59,7 @@ Route::middleware('auth')->group(function () {
         Route::post('impersonate/{user}', [ImpersonationController::class, 'start'])->name('impersonate.start');
         Route::get('menus', [MenuController::class, 'index'])->name('menus.index');
         Route::put('menus', [MenuController::class, 'update'])->name('menus.update');
+        Route::get('logs', [LogController::class, 'index'])->name('logs.index');
         Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
         Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
         Route::post('settings', [SettingController::class, 'store'])->name('settings.store');
