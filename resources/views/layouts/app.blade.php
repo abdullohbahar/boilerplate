@@ -147,7 +147,6 @@
 				</header>
 
 				<div class="page__body">
-					<x-flash-message />
 					@yield('content')
 				</div>
 			</div>
@@ -156,5 +155,6 @@
 </div>
 
 @stack('scripts')
+<x-toast />
 </body>
 </html>

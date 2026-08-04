@@ -36,12 +36,9 @@
 							<div class="flex items-center gap-1 justify-end">
 								<a href="{{ route('admin.roles.edit', $role) }}"
 									class="button button--ghost button--neutral button--sm">Edit</a>
-								<form method="POST" action="{{ route('admin.roles.destroy', $role) }}"
-									onsubmit="return confirm('Delete role \'{{ addslashes($role->name) }}\'? Users with this role will lose it.')">
-									@csrf
-									@method('DELETE')
-									<button type="submit" class="button button--ghost button--danger button--sm">Delete</button>
-								</form>
+								<button type="button"
+									onclick="confirmDelete('{{ route('admin.roles.destroy', $role) }}', '{{ addslashes($role->name) }}')"
+									class="button button--ghost button--danger button--sm">Delete</button>
 							</div>
 						</td>
 					</tr>

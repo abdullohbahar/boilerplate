@@ -59,12 +59,9 @@
 								@endif
 								<a href="{{ route('admin.users.edit', $user) }}"
 									class="button button--ghost button--neutral button--sm">Edit</a>
-								<form method="POST" action="{{ route('admin.users.destroy', $user) }}"
-									onsubmit="return confirm('Delete {{ addslashes($user->name) }}?')">
-									@csrf
-									@method('DELETE')
-									<button type="submit" class="button button--ghost button--danger button--sm">Delete</button>
-								</form>
+								<button type="button"
+									onclick="confirmDelete('{{ route('admin.users.destroy', $user) }}', '{{ addslashes($user->name) }}')"
+									class="button button--ghost button--danger button--sm">Delete</button>
 							</div>
 						</td>
 					</tr>
