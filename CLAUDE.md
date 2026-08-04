@@ -155,3 +155,7 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 - Do NOT delete tests without approval.
 
 </laravel-boost-guidelines>
+
+## Project Context Files
+
+- Always read `README.md`, `task.md`, and `docs.md` at the project root before starting work to stay aligned with project setup, current tasks, and documentation.
